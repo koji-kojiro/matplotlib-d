@@ -1,0 +1,6 @@
+{
+    "name": "examples",
+    "dependencies": {
+	"pyplotd": {"version": "~master", "path": "../"}
+    }
+}

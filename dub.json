@@ -1,0 +1,10 @@
+{
+    "name": "pyplotd",
+    "authors": ["koji-kojiro"],
+    "description": "A simple interface to pyplot.",
+    "copyright": "Copyright 2016, koji-kojiro",
+    "license": "MIT",
+    "targetName": "pyplotd",
+    "targetType": "staticLibrary",
+    "targetPath": "build"
+}
