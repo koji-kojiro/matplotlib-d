@@ -11,10 +11,10 @@ void main() {
 }
 
 void simple() {
-    auto x = iota(0, 2 * PI + 0.05, 0.05);
+    auto x = iota(0, 2.05, 0.05).map!(x => x * PI);
     auto y = x.map!(sin);
     
-    plt.plot(x, y);
+    plt.plot(x, y, "r-", ["label": "$y=sin(x)$"]);
     plt.xlim(0, 2 * PI);
     plt.ylim(-1, 1);
     plt.savefig("simple.png");
