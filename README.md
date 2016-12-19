@@ -2,7 +2,7 @@
 
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 [![Build Status](https://travis-ci.org/koji-kojiro/matplotlib-d.svg?branch=master)](https://travis-ci.org/koji-kojiro/matplotlib-d)
-<a href="https://code.dlang.org/packages/matplotlib-d" title="Go to matplotlib-d"><img src="https://img.shields.io/dub/v/matplotlib-d.svg" alt="Dub version"></a>
+[![Dub version](https://img.shields.io/dub/v/matplotlib-d.svg)](https://code.dlang.org/packages/matplotlib-d)
 
 A simple interface to pyplot for D.
 ## Requirements
