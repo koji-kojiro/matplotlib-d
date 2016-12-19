@@ -1,0 +1,12 @@
+os:
+  - linux
+  - osx
+
+language: d
+
+d:
+  - dmd
+  - ldc
+
+script:
+- dub test --compiler=${DC}

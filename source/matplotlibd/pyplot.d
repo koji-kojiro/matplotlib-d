@@ -1,4 +1,4 @@
-module pyplotd;
+module matplotlibd.pyplot;
 
 import std.stdio : popen, fprintf, fclose, _IO_FILE;
 import std.format : format;
@@ -74,11 +74,9 @@ template GenPyMethods() {
 }
 
 void eval() {
-    auto script = py_script;
     auto p = popen(py_path, "w");
     p.fprintf("%s", cast(char*)py_script);
     p.fclose();
-    py_script = "import matplotlib.pyplot as plt\n";
 }
 
 void send(string line) {
@@ -125,5 +123,14 @@ void setPythonPath(string path) {
     py_path = path;
 }
 
+void clear() {
+    py_script = "import matplotlib.pyplot as plt\n";
+}
+
 mixin(GenPyMethods!());
 
+unittest {
+    auto script = py_script ~ "plt.figure(figsize=[4, 4])\n";
+    figure(["figsize": [4, 4]]);
+    assert(py_script == script);
+}

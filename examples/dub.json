@@ -1,6 +1,6 @@
 {
     "name": "examples",
     "dependencies": {
-	"pyplotd": {"version": "~master", "path": "../"}
+	"matplotlib-d": {"version": "~master", "path": "../"}
     }
 }
