@@ -74,11 +74,9 @@ template GenPyMethods() {
 }
 
 void eval() {
-    auto script = py_script;
     auto p = popen(py_path, "w");
     p.fprintf("%s", cast(char*)py_script);
     p.fclose();
-    py_script = "import matplotlib.pyplot as plt\n";
 }
 
 void send(string line) {
@@ -123,6 +121,10 @@ PyNone None = null;
 
 void setPythonPath(string path) {
     py_path = path;
+}
+
+void clear() {
+    py_script = "import matplotlib.pyplot as plt\n";
 }
 
 mixin(GenPyMethods!());
