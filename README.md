@@ -1,1 +1,1 @@
-# pyplotd
+# matplotlib-d
