@@ -129,3 +129,8 @@ void clear() {
 
 mixin(GenPyMethods!());
 
+unittest {
+    auto script = py_script ~ "plt.figure(figsize=[4, 4])\n";
+    figure(["figsize": [4, 4]]);
+    assert(py_script == script);
+}
