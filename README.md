@@ -1,6 +1,7 @@
 # matplotlib-d
 
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+[![Build Status](https://travis-ci.org/koji-kojiro/matplotlib-d.svg?branch=master)](https://travis-ci.org/koji-kojiro/matplotlib-d)
 
 A simple interface to pyplot for D.
 ## Requirements

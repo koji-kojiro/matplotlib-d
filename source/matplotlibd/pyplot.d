@@ -1,6 +1,6 @@
 module matplotlibd.pyplot;
 
-import std.stdio : popen, fprintf, fclose, _IO_FILE;
+import std.stdio : popen, fprintf, fclose;
 import std.format : format;
 
 private:
