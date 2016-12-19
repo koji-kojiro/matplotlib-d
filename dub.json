@@ -6,5 +6,6 @@
     "license": "MIT",
     "targetName": "matplotlibd",
     "targetType": "staticLibrary",
-    "targetPath": "build"
+    "targetPath": "build",
+    "workingDirectory": "build"
 }
