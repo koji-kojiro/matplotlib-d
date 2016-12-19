@@ -6,6 +6,7 @@ import plt = matplotlibd.pyplot;
 
 void main() {
     simple();
+    color();
     polar();
     subplots();
 }
@@ -19,6 +20,22 @@ void simple() {
     plt.ylim(-1, 1);
     plt.legend();
     plt.savefig("simple.png");
+    plt.clear();
+}
+
+void color() {
+    const n = 100;
+    auto x = iota(n);
+    auto y = x[];
+    double[n][n] z;
+
+    foreach (i; 0..n)
+        foreach (j; 0..n)
+            z[i][j] = i + j;
+    plt.contourf(x, y, z, 64, ["cmap": "hsv"]);
+    plt.colorbar();
+    plt.savefig("color.png");
+    plt.clear();
 }
 
 void subplots() {
@@ -45,6 +62,7 @@ void subplots() {
     plt.ylim(-1, 1);
 
     plt.savefig("subplots.png");
+    plt.clear();
 }
 
 void polar() {
@@ -56,5 +74,6 @@ void polar() {
     plt.subplot(111, ["projection": "polar"]);
     plt.scatter(theta, r, ["c": r], ["s": area], ["cmap": "hsv"], ["alpha": 0.25]);
     plt.savefig("polar.png");
+    plt.clear();
 }
 
