@@ -1,4 +1,4 @@
-module pyplotd;
+module matplotlibd.pyplot;
 
 import std.stdio : popen, fprintf, fclose, _IO_FILE;
 import std.format : format;

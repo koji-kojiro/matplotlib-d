@@ -2,7 +2,7 @@ import std.math;
 import std.range;
 import std.random;
 import std.algorithm;
-import plt = pyplotd;
+import plt = matplotlibd.pyplot;
 
 void main() {
     simple();
