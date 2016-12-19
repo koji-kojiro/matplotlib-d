@@ -17,6 +17,7 @@ void simple() {
     plt.plot(x, y, "r-", ["label": "$y=sin(x)$"]);
     plt.xlim(0, 2 * PI);
     plt.ylim(-1, 1);
+    plt.legend();
     plt.savefig("simple.png");
 }
 
