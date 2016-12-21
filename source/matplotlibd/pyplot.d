@@ -1,7 +1,5 @@
 module matplotlibd.pyplot;
 
-import std.format : format;
-
 private:
 
 string py_path = "python";
@@ -56,15 +54,15 @@ immutable string py_methods = (){
     foreach(name; method_names) {
         py_methods ~=
             "void " ~ name ~ "(T...)(T a)" ~
-            "{string p;if(a.length>0){foreach(i;a){p~=parseArgs(i);}" ~
+            "{import std.format: format;" ~
+            "string p;if(a.length>0){foreach(i;a){p~=parseArgs(i);}" ~
             "p = p[0..$-1];}send(format(\"plt."~ name ~ "(%s)\n\",p));";
 
         if (name == "show" || name == "savefig")
             py_methods ~= "eval();}\n";
         else
-            py_methods ~= "}\n";    
+            py_methods ~= "}\n";
     }
-    
     return py_methods;
 }();
 
@@ -73,23 +71,29 @@ template GenPyMethods() {
 }
 
 void eval() {
-    import matplotlibd.pycall;
-    python_call(py_path, py_script);
-}
+    import std.process: pipeProcess, wait, Redirect;
+    auto pipes = pipeProcess(py_path, Redirect.stdin | Redirect.stderr);
 
-/+
-void eval() {
-    auto p = popen(py_path, "w");
-    p.fprintf("%s", cast(char*)py_script);
-    p.fclose();
+    pipes.stdin.writeln(py_script);
+    pipes.stdin.writeln("exit()");
+    pipes.stdin.close();
+
+    wait(pipes.pid);
+
+    string error;
+    foreach (line; pipes.stderr.byLine)
+        error ~= line ~ "\n";
+
+    if (error)
+        throw new Exception("\n\nERROR occurred in Python:\n" ~ error);
 }
-+/
 
 void send(string line) {
     py_script ~= line;
 }
 
 string d2py(T)(T v) {
+    import std.format: format;
     static if (is(typeof(v) : PyNone))
         return "None";
 
@@ -104,7 +108,6 @@ string d2py(T)(T v) {
 }
 
 string parseArgs(Args)(Args args) {
-
     static if (is(typeof(args.keys) : string[])) {
         string parsed;
         foreach(key; args.byKey)
@@ -112,7 +115,6 @@ string parseArgs(Args)(Args args) {
     }
     else
         string parsed =  d2py(args) ~ ",";
-    
     return parsed;
 }
 
