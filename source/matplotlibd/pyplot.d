@@ -1,6 +1,5 @@
 module matplotlibd.pyplot;
 
-import std.stdio : popen, fprintf, fclose;
 import std.format : format;
 
 private:
@@ -74,10 +73,17 @@ template GenPyMethods() {
 }
 
 void eval() {
+    import matplotlibd.pycall;
+    python_call(py_path, py_script);
+}
+
+/+
+void eval() {
     auto p = popen(py_path, "w");
     p.fprintf("%s", cast(char*)py_script);
     p.fclose();
 }
++/
 
 void send(string line) {
     py_script ~= line;

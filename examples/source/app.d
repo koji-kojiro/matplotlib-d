@@ -11,6 +11,11 @@ void main() {
     subplots();
 }
 
+void bad() {
+    plt.plot("hoge");
+    plt.show();
+}
+
 void simple() {
     auto x = iota(0, 2.05, 0.05).map!(x => x * PI);
     auto y = x.map!(sin);
