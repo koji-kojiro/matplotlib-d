@@ -2,8 +2,14 @@ module matplotlibd.pyplot;
 
 private:
 
-string py_path = "python";
-string py_script = "import matplotlib.pyplot as plt\n";
+static this() {
+    import std.process: environment;
+    py_path =  environment.get("PYTHON", "python");
+    py_script = "import matplotlib.pyplot as plt\n";
+}
+
+string py_path;
+string py_script;
 
 immutable string[] method_names =
     ["Annotation", "Arrow", "Artist", "AutoLocator", "Axes", 
@@ -126,10 +132,6 @@ alias immutable (void*) PyNone;
 PyBool False = false;
 PyBool True = true;
 PyNone None = null;
-
-void setPythonPath(string path) {
-    py_path = path;
-}
 
 void clear() {
     py_script = "import matplotlib.pyplot as plt\n";
