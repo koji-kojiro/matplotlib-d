@@ -43,9 +43,10 @@ void main() {
 
 Color plot example:
 
+```d
 import std.range;
 import plt = matplotlibd.pyplot;
-```d
+
 void main() {
 	const n = 100;
 	auto x = iota(n);
