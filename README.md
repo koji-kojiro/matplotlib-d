@@ -18,8 +18,10 @@ $ dub build --build=release
 
 ## Usage
 To use this package, put the following dependency into your project's dependencies section:  
-dub.json: `"matplotlib-d": "~>0.1.0"`  
-dub.sdl: `dependency "matplotlib-d" version="~>0.1.0"`  
+
+dub.json: `"matplotlib-d": "~>0.1.2"`
+
+dub.sdl: `dependency "matplotlib-d" version="~>0.1.2"`  
 
 Simple example:
 ```d
