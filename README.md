@@ -10,18 +10,35 @@ A simple interface to pyplot for D.
 - Python
 - matplotlib
 
-## Build
-```
-$ cd matplotlib-d
-$ dub build --build=release
-```
-
 ## Usage
+### Installation
 To use this package, put the following dependency into your project's dependencies section:  
-
-dub.json: `"matplotlib-d": "~>0.1.2"`
-
+dub.json: `"matplotlib-d": "~>0.1.2"`  
 dub.sdl: `dependency "matplotlib-d" version="~>0.1.2"`  
+
+For small applications or scripts, add following sentence to the head of your script.  
+```d
+#!/usr/bin/env dub
+/+ dub.sdl:
+	name "name_of_your_application"
+	dependency "matplotlib-d" version="~>0.1.2"
++/
+```
+And excute with `dub run --single`.  
+For more details, please refer to [the documentation of dub](https://dlang.org/spec/grammar.html).  
+
+### Syntax
+Most pyplot functions are avilable.  
+For more details for each functions, please refer to the [documantation of pyplot](http://matplotlib.org/api/pyplot_summary.html).  
+Describe Python keyword arguments as an associative array with string of keyword name as key.  
+
+- The Python way:  
+*function(arg1, arg2..., keyword1=kwarg1, keyword2=kwarg2...)*  
+- The D way:  
+*function(arg1, arg2..., ["keyword1": kwarg1], ["keyword2": kwarg2])*  
+
+
+## Examples
 
 Simple example:
 ```d
