@@ -25,7 +25,7 @@ For small applications or scripts, add following sentence to the head of your sc
 +/
 ```
 And excute with `dub run --single`.  
-For more details, please refer to [the documentation of dub](https://dlang.org/spec/grammar.html).  
+For more details, please refer to [the documentation of dub](https://code.dlang.org/getting_started).  
 
 ### Syntax
 Most pyplot functions are avilable.  
