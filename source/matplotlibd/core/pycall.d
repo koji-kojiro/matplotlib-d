@@ -1,5 +1,6 @@
 module matplotlibd.core.pycall;
 
+
 void call(string py_script) {
     import std.process: environment, pipeProcess, wait, Redirect;
 
