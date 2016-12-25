@@ -13,8 +13,8 @@ A simple interface to pyplot for D.
 ## Usage
 ### Installation
 To use this package, put the following dependency into your project's dependencies section:  
-dub.json: `"matplotlib-d": "~>0.1.2"`  
-dub.sdl: `dependency "matplotlib-d" version="~>0.1.2"`  
+dub.json: `"matplotlib-d": "~>0.1.3"`  
+dub.sdl: `dependency "matplotlib-d" version="~>0.1.3"`  
 
 For small applications or scripts, add following sentence to the head of your script.  
 ```d
