@@ -22,7 +22,7 @@ For small applications or scripts, add following sentence to the head of your sc
 #!/usr/bin/env dub
 /+ dub.sdl:
 	name "name_of_your_application"
-	dependency "matplotlib-d" version="~>0.1.2"
+	dependency "matplotlib-d" version="~>0.1.4"
 +/
 ```
 And excute with `dub run --single`.  
