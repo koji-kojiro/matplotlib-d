@@ -36,6 +36,15 @@ SubplotTool
 Text
 TickHelper
 Widget
+_auto_draw_if_interactive
+_autogen_docstring
+_backend_selection
+_imread
+_imsave
+_setp
+_setup_pyplot_info_docstrings
+_show
+_string_to_bool
 acorr
 angle_spectrum
 annotate

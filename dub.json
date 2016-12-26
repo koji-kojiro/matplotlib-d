@@ -7,5 +7,6 @@
     "targetName": "matplotlibd",
     "targetType": "staticLibrary",
     "targetPath": "build",
-    "workingDirectory": "build"
+    "workingDirectory": "build",
+    "preBuildCommands": ["python $PACKAGE_DIR/python/prebuild.py $PACKAGE_DIR"]
 }
