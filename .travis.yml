@@ -9,7 +9,7 @@ d:
   - dmd
 
 before_install:
-  - sudo pip install -r matplotlib
+  - sudo pip install matplotlib tkinter
 
 script:
   - dub test --compiler=${DC}
