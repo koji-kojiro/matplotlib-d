@@ -14,8 +14,10 @@
 ## Usage
 ### Installation
 To use this package, put the following dependency into your project's dependencies section:  
+
 dub.json: `"matplotlib-d": "~>0.1.4"`  
 dub.sdl: `dependency "matplotlib-d" version="~>0.1.4"`  
+
 
 For small applications or scripts, add following sentence to the head of your script.  
 ```d
