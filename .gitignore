@@ -5,7 +5,7 @@ __dummy.html
 *.obj
 __test__*__
 *~
-python/
+views/
 build/
 README.html
 *.png
