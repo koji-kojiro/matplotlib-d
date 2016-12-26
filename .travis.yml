@@ -2,11 +2,21 @@ os:
   - linux
   - osx
 
-language: d
+language: python
 
-d:
-  - dmd
-  - ldc2
+python:
+  - "2.6"
+  - "2.7"
+  - "3.2"
+  - "3.3"
+  - "3.4"
+  - "3.5"
+
+install: "pip install matplotlib"
+
+env:
+  - DC=ldc2
+  - DC=dmd
 
 script:
-- dub test --compiler=${DC}
+  - dub test --compiler=$DC
