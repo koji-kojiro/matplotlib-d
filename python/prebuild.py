@@ -23,8 +23,11 @@ def gen_pyplot_functions(dub_root):
     generate 'pyplot_functions.txt' for matplotlibd.pyplot.
     '''
     import matplotlib.pyplot
+    from string import lowercase
 
-    functions = extract_function_names(matplotlib.pyplot)
+    functions = filter(lambda i: i[0] != '_' or i[0] in lowercase,
+                       extract_function_names(matplotlib.pyplot))
+
     with open(dub_root + "/views/pyplot_functions.txt", "w") as f:
         f.write("\n".join(functions))
 
