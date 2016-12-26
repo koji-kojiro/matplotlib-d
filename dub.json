@@ -1,11 +1,12 @@
 {
     "name": "matplotlib-d",
     "authors": ["koji-kojiro"],
-    "description": "A simple interface to pyplot.",
+    "description": "2D Plotting library for D using python and matplotlib",
     "copyright": "Copyright © 2016, koji-kojiro",
     "license": "MIT",
     "targetName": "matplotlibd",
     "targetType": "staticLibrary",
     "targetPath": "build",
-    "workingDirectory": "build"
+    "workingDirectory": "build",
+    "preBuildCommands": ["python $PACKAGE_DIR/python/prebuild.py $PACKAGE_DIR"]
 }

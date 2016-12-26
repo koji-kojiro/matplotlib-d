@@ -5,8 +5,13 @@ os:
 language: d
 
 d:
-  - dmd
   - ldc2
+  - dmd
+
+before_install:
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get install python-tk; fi
+  - sudo pip install matplotlib
+
 
 script:
-- dub test --compiler=${DC}
+  - dub test --compiler=${DC}

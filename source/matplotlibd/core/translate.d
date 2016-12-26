@@ -7,6 +7,7 @@ PyBool False = false;
 PyBool True = true;
 PyNone None = null;
 
+
 string d2py(T)(T v) {
     import std.format: format;
     static if (is(typeof(v) : PyNone))
@@ -33,6 +34,7 @@ unittest {
     assert(d2py("Hello!") == "\"Hello!\"");
     assert(d2py(5.iota) == "[0, 1, 2, 3, 4]");
 }
+
 
 string parseArgs(Args)(Args args) {
     static if (is(typeof(args.keys) : string[])) {

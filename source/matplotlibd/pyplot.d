@@ -6,39 +6,45 @@ private:
 
 string py_script = "import matplotlib.pyplot as plt\n";
 
-immutable string py_methods = (){
+immutable string plt_funcs = (){
     import std.string: splitLines;
 
     string[] method_names = import("pyplot_functions.txt").splitLines;
-    string py_methods;
+    string plt_funcs;
 
     foreach(name; method_names) {
-        py_methods ~=
+        plt_funcs ~=
             "void " ~ name ~ "(T...)(T a)" ~
             "{import std.format: format;" ~
             "string p;if(a.length>0){foreach(i;a){p~=parseArgs(i);}" ~
             "p = p[0..$-1];}py_script~=format(\"plt."~ name ~ "(%s)\n\",p);";
 
         if (name == "show" || name == "savefig")
-            py_methods ~= "call(py_script);}\n";
+            plt_funcs ~= "call(py_script);}\n";
         else
-            py_methods ~= "}\n";
+            plt_funcs ~= "}\n";
     }
 
-    return py_methods;
+    return plt_funcs;
 }();
 
+
 public:
+
 import matplotlibd.core.translate: False, True, None;
+
 
 void clear() {
     py_script = "import matplotlib.pyplot as plt\n";
 }
 
-mixin(py_methods);
+mixin(plt_funcs);
 
 unittest {
-    auto script = py_script ~ "plt.figure(figsize=[4, 4])\n";
-    figure(["figsize": [4, 4]]);
-    assert(py_script == script);
+    import std.string;
+    auto script = py_script ~ "plt.plot([1, 2],[2, 4],\"r-\",lw=2)\n";
+    plot([1, 2], [2, 4], "r-", ["lw": 2]);
+    assert(script == py_script);
+    clear();
+    assert(py_script == "import matplotlib.pyplot as plt\n");
 }

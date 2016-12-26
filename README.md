@@ -5,7 +5,8 @@
 [![Dub version](https://img.shields.io/dub/v/matplotlib-d.svg)](https://code.dlang.org/packages/matplotlib-d)
 [![Dub download](https://img.shields.io/dub/dt/matplotlib-d.svg)](https://code.dlang.org/packages/matplotlib-d)
 
-A simple interface to pyplot for D.
+2D Plotting library for D using python and matplotlib.  
+
 ## Requirements
 - Python
 - matplotlib
@@ -13,15 +14,17 @@ A simple interface to pyplot for D.
 ## Usage
 ### Installation
 To use this package, put the following dependency into your project's dependencies section:  
-dub.json: `"matplotlib-d": "~>0.1.3"`  
-dub.sdl: `dependency "matplotlib-d" version="~>0.1.3"`  
+
+dub.json: `"matplotlib-d": "~>0.1.4"`  
+dub.sdl: `dependency "matplotlib-d" version="~>0.1.4"`  
+
 
 For small applications or scripts, add following sentence to the head of your script.  
 ```d
 #!/usr/bin/env dub
 /+ dub.sdl:
 	name "name_of_your_application"
-	dependency "matplotlib-d" version="~>0.1.2"
+	dependency "matplotlib-d" version="~>0.1.4"
 +/
 ```
 And excute with `dub run --single`.  
