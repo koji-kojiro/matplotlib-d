@@ -9,7 +9,7 @@ d:
   - dmd
 
 before_install:
-  - sudo pip install matplotlib
+  - sudo pip install -r matplotlib
 
 script:
   - dub test --compiler=${DC}
