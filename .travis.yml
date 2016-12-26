@@ -9,7 +9,9 @@ d:
   - dmd
 
 before_install:
-  - sudo pip install matplotlib tkinter
+  - "if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get install python-tk; fi"
+  - sudo pip install matplotlib
+
 
 script:
   - dub test --compiler=${DC}
