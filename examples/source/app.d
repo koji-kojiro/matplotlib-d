@@ -9,11 +9,18 @@ void main() {
     color();
     polar();
     subplots();
+    experimental();
 }
 
-void bad() {
-    plt.plot("hoge");
-    plt.show();
+void experimental() {
+    import matplotlibd.core.pycall;
+    auto script =
+        "import matplotlib.pyplot as plt\n" ~
+        "from mpl_toolkits.mplot3d import Axes3D\n" ~
+        "plt.subplot(111, projection='3d')\n" ~
+        "plt.plot([0, 1], [0, 1], [0, 1])\n" ~
+        "plt.savefig('experimental.png')\n";
+    call(script);
 }
 
 void simple() {
