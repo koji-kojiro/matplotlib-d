@@ -8,8 +8,12 @@ string py_script = "import matplotlib.pyplot as plt\n";
 
 immutable string plt_funcs = (){
     import std.string: splitLines;
+    import std.meta : staticMap, aliasSeqOf;
 
-    string[] method_names = import("pyplot_functions.txt").splitLines;
+    enum isValidIdentifier(string s) = __traits(compiles, { mixin(`auto ` ~ s ~ ` = 3;` ); });
+    enum fixIdentifier(string s) = isValidIdentifier!s ? s : s ~ '_';
+    auto method_names = staticMap!(fixIdentifier, aliasSeqOf!(import("pyplot_functions.txt").splitLines));
+
     string plt_funcs;
 
     foreach(name; method_names) {
