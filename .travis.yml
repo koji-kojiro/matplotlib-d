@@ -19,12 +19,11 @@ addons:
     packages:
     - python-tk
     - python3-tk
-    - python-pip
-    - python3-pip
+    - python-matplotlib
+    - python3-matplotlib
 
 before_install:
-  - if [ $TRAVIS_OS_NAME = osx ]; then brew install python$PYTHON_VER; fi
-  - pip$PYTHON_VER install matplotlib --user
+  - if [ $TRAVIS_OS_NAME = osx ]; then brew install python$PYTHON_VER homebrew/science/matplotlib; fi
 
 script:
   - MATPLOTLIB_D_PYTHON=python$PYTHON_VER dub test --compiler=${DC}
