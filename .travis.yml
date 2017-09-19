@@ -1,3 +1,5 @@
+sudo: false
+
 os:
   - linux
   - osx
@@ -5,13 +7,24 @@ os:
 language: d
 
 d:
-  - ldc2
+  - ldc
   - dmd
 
-before_install:
-  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get install python-tk; fi
-  - sudo pip install matplotlib
+env:
+  - PYTHON_VER=2
+  - PYTHON_VER=3
 
+addons:
+  apt:
+    packages:
+    - python-tk
+    - python3-tk
+    - python-pip
+    - python3-pip
+
+before_install:
+  - if [ $TRAVIS_OS_NAME = osx ]; then brew install python$PYTHON_VER; fi
+  - pip$PYTHON_VER install matplotlib --user
 
 script:
-  - dub test --compiler=${DC}
+  - MATPLOTLIB_D_PYTHON=python$PYTHON_VER dub test --compiler=${DC}
