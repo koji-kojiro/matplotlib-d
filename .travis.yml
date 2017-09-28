@@ -23,7 +23,7 @@ addons:
     - python3-matplotlib
 
 before_install:
-  - if [ $TRAVIS_OS_NAME = osx ]; then brew install python$PYTHON_VER homebrew/science/matplotlib; fi
+  - if [ $TRAVIS_OS_NAME = osx ]; then brew install python$PYTHON_VER; brew install homebrew/science/matplotlib; fi
 
 script:
   - MATPLOTLIB_D_PYTHON=python$PYTHON_VER dub test --compiler=${DC}
