@@ -13,7 +13,8 @@ def extract_function_names(module):
     scope = locals()
 
     def iscallable(name):
-        return eval('callable(mod.{})'.format(name), scope)
+        ignore_decorators = ['dedent','deprecated','silent_list', 'warn_deprecated']
+        return eval('callable(mod.{})'.format(name), scope) and name not in ignore_decorators
 
     return filter(iscallable, attr_list)
 
