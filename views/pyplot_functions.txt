@@ -36,15 +36,6 @@ SubplotTool
 Text
 TickHelper
 Widget
-_auto_draw_if_interactive
-_autogen_docstring
-_backend_selection
-_imread
-_imsave
-_setp
-_setup_pyplot_info_docstrings
-_show
-_string_to_bool
 acorr
 angle_spectrum
 annotate
@@ -82,6 +73,7 @@ csd
 cycler
 dedent
 delaxes
+deprecated
 disconnect
 draw
 draw_all
@@ -145,6 +137,7 @@ matshow
 minorticks_off
 minorticks_on
 new_figure_manager
+nipy_spectral
 over
 pause
 pcolor
