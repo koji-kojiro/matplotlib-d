@@ -11,6 +11,8 @@
 - Python
 - matplotlib
 
+`matplotlib-d` uses `python3` by default, thus if you want to use `python2`, set `$MATPLOTLIB_D_PYTHON` to `python2`.
+
 ## Usage
 ### Installation
 To use this package, put the following dependency into your project's dependencies section:  
@@ -31,7 +33,7 @@ And excute with `dub run --single`.
 For more details, please refer to [the documentation of dub](https://code.dlang.org/getting_started).  
 
 ### Syntax
-Most pyplot functions are avilable.  
+Most pyplot functions are available.  
 For more details for each functions, please refer to the [documantation of pyplot](http://matplotlib.org/api/pyplot_summary.html).  
 Describe Python keyword arguments as an associative array with string of keyword name as key.  
 
