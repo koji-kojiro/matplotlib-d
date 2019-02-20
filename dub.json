@@ -8,5 +8,5 @@
     "targetType": "staticLibrary",
     "targetPath": "build",
     "workingDirectory": "build",
-    "preBuildCommands": ["python $PACKAGE_DIR/python/prebuild.py $PACKAGE_DIR"]
+    "preBuildCommands": ["${MATPLOTLIB_D_PYTHON:-python3} $PACKAGE_DIR/python/prebuild.py $PACKAGE_DIR"]
 }

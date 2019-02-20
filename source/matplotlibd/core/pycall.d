@@ -4,7 +4,7 @@ module matplotlibd.core.pycall;
 void call(string py_script) {
     import std.process: environment, pipeProcess, wait, Redirect;
 
-    auto py_path =  environment.get("PYTHON", "python");
+    auto py_path =  environment.get("MATPLOTLIB_D_PYTHON", "python3");
     auto pipes = pipeProcess(py_path, Redirect.stdin | Redirect.stderr);
 
     pipes.stdin.writeln(py_script);
