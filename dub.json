@@ -2,11 +2,11 @@
     "name": "matplotlib-d",
     "authors": ["koji-kojiro"],
     "description": "2D Plotting library for D using python and matplotlib",
-    "copyright": "Copyright © 2016-2019, koji-kojiro",
+    "copyright": "Copyright © 2016-2020, koji-kojiro",
     "license": "MIT",
     "targetName": "matplotlibd",
     "targetType": "staticLibrary",
     "targetPath": "build",
     "workingDirectory": "build",
-    "preBuildCommands": ["${MATPLOTLIB_D_PYTHON:-python3} $PACKAGE_DIR/python/prebuild.py $PACKAGE_DIR"]
+    "preBuildCommands": ["$${MATPLOTLIB_D_PYTHON:-python3} $PACKAGE_DIR/python/prebuild.py $PACKAGE_DIR"]
 }
