@@ -4,7 +4,7 @@ import matplotlibd.core.translate;
 
 private:
 
-string py_script = "import matplotlib.pyplot as plt\n";
+string py_script = "import matplotlib.pyplot as plt\nimport numpy as np\n";
 
 immutable string plt_funcs = (){
     import std.string: splitLines;
@@ -35,16 +35,16 @@ import matplotlibd.core.translate: False, True, None;
 
 
 void clear() {
-    py_script = "import matplotlib.pyplot as plt\n";
+    py_script = "import matplotlib.pyplot as plt\nimport numpy as np\n";
 }
 
 mixin(plt_funcs);
 
 unittest {
     import std.string;
-    auto script = py_script ~ "plt.plot([1, 2],[2, 4],\"r-\",lw=2)\n";
+    auto script = py_script ~ "plt.plot(np.array([1, 2]),np.array([2, 4]),\"r-\",lw=2)\n";
     plot([1, 2], [2, 4], "r-", ["lw": 2]);
     assert(script == py_script);
     clear();
-    assert(py_script == "import matplotlib.pyplot as plt\n");
+    assert(py_script == "import matplotlib.pyplot as plt\nimport numpy as np\n");
 }

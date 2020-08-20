@@ -1,5 +1,7 @@
 module matplotlibd.core.translate;
 
+import std.traits : isArray;
+
 alias immutable bool PyBool;
 alias immutable (void*) PyNone;
 
@@ -19,6 +21,9 @@ string d2py(T)(T v) {
     else static if (is(typeof(v) : string))
         return format("\"%s\"", v);
 
+    else static if(isArray!T)
+        return format("np.array(%s)", v);
+        
     else
         return format("%s", v);
 }
@@ -33,6 +38,8 @@ unittest {
     assert(d2py(false) == "False");
     assert(d2py("Hello!") == "\"Hello!\"");
     assert(d2py(5.iota) == "[0, 1, 2, 3, 4]");
+    import std.array : array;
+    assert(d2py(5.iota.array) == "np.array([0, 1, 2, 3, 4])");
 }
 
 
