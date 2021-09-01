@@ -29,7 +29,7 @@ def gen_pyplot_functions(dub_root):
     functions = filter(lambda i: i[0] != '_' or i[0] in ascii_lowercase,
                        extract_function_names(matplotlib.pyplot))
 
-    with open(dub_root + "/views/pyplot_functions.txt", "w") as f:
+    with open(dub_root + "/views/pyplot_functions.txt", "w+") as f:
         f.write("\n".join(functions))
 
 
