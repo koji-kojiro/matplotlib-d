@@ -4,7 +4,7 @@ import matplotlibd.core.translate;
 
 private:
 
-string py_script = "import matplotlib.pyplot as plt\nimport numpy as np\n";
+string py_script = "import matplotlib.pyplot as plt\nfrom mpl_toolkits.mplot3d import Axes3D\nimport numpy as np\n";
 
 immutable string plt_funcs = (){
     import std.string: splitLines;
@@ -35,7 +35,7 @@ import matplotlibd.core.translate: False, True, None;
 
 
 void clear() {
-    py_script = "import matplotlib.pyplot as plt\nimport numpy as np\n";
+    py_script = "import matplotlib.pyplot as plt\nfrom mpl_toolkits.mplot3d import Axes3D\nimport numpy as np\n";
 }
 
 mixin(plt_funcs);

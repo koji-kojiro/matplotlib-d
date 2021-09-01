@@ -26,6 +26,7 @@ MultipleLocator
 Normalize
 NullFormatter
 NullLocator
+Number
 PolarAxes
 Polygon
 Rectangle
@@ -36,15 +37,6 @@ SubplotTool
 Text
 TickHelper
 Widget
-_auto_draw_if_interactive
-_autogen_docstring
-_backend_selection
-_imread
-_imsave
-_setp
-_setup_pyplot_info_docstrings
-_show
-_string_to_bool
 acorr
 angle_spectrum
 annotate
@@ -72,7 +64,6 @@ close
 cohere
 colorbar
 colormaps
-colors
 connect
 contour
 contourf
@@ -80,7 +71,6 @@ cool
 copper
 csd
 cycler
-dedent
 delaxes
 disconnect
 draw
@@ -119,7 +109,6 @@ hexbin
 hist
 hist2d
 hlines
-hold
 hot
 hsv
 imread
@@ -130,9 +119,6 @@ install_repl_displayhook
 interactive
 ioff
 ion
-is_numlike
-is_string_like
-ishold
 isinteractive
 jet
 legend
@@ -145,7 +131,7 @@ matshow
 minorticks_off
 minorticks_on
 new_figure_manager
-over
+nipy_spectral
 pause
 pcolor
 pcolormesh
@@ -177,9 +163,7 @@ semilogy
 set_cmap
 setp
 show
-silent_list
 specgram
-spectral
 spring
 spy
 stackplot
